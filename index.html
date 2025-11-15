@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mr. Anderson's Store</title>
+<style>
+    /* Body and font styling */
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #fff8f0;
+        color: #333;
+    }
+
+    /* Header */
+    header {
+        background-color: #6b8e23;
+        color: white;
+        padding: 20px;
+        text-align: center;
+    }
+    header h1 {
+        margin: 0;
+        font-family: 'Georgia', serif;
+    }
+
+    /* Navigation */
+    nav {
+        margin-top: 10px;
+    }
+    nav a {
+        color: white;
+        margin: 0 12px;
+        text-decoration: none;
+        font-weight: bold;
+        cursor: pointer;
+    }
+    nav a:hover {
+        text-decoration: underline;
+    }
+
+    /* Main content */
+    main {
+        padding: 20px;
+        text-align: center;
+    }
+
+    .section {
+        display: none;
+        max-width: 900px;
+        margin: 0 auto;
+    }
+
+    .section.active {
+        display: block;
+    }
+
+    /* Cozy images */
+    img {
+        max-width: 100%;
+        border-radius: 10px;
+        margin: 15px 0;
+    }
+
+    /* Products cards */
+    .products {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+        padding: 0;
+        list-style: none;
+    }
+    .products li {
+        background-color: #fff3e0;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 2px 2px 8px rgba(0,0,0,0.1);
+        width: 200px;
+    }
+    .products img {
+        border-radius: 8px;
+    }
+
+    /* Contact form */
+    form input, form textarea, form button {
+        display: block;
+        margin: 10px auto;
+        padding: 10px;
+        width: 80%;
+        max-width: 400px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+    }
+    form button {
+        background-color: #6b8e23;
+        color: white;
+        border: none;
+        cursor: pointer;
+    }
+    form button:hover {
+        background-color: #556b2f;
+    }
+
+    /* Footer */
+    footer {
+        background-color: #6b8e23;
+        color: white;
+        text-align: center;
+        padding: 10px;
+        margin-top: 30px;
+    }
+
+</style>
+</head>
+<body>
+<header>
+    <h1>Mr. Anderson's Store</h1>
+    <nav>
+        <a onclick="showSection('home')">Home</a>
+        <a onclick="showSection('products')">Products</a>
+        <a onclick="showSection('about')">About</a>
+        <a onclick="showSection('contact')">Contact</a>
+        <a onclick="showSection('cart')">Cart</a>
+    </nav>
+</header>
+
+<main>
+    <!-- Home Section -->
+    <div id="home" class="section active">
+        <h2>Welcome to Mr. Anderson's Store!</h2>
+        <p>Where sports and community come together. Find your favorite gear and enjoy a cozy shopping experience.</p>
+        <img src="https://images.unsplash.com/photo-1557954893-d1e0aa7cc470?auto=format&fit=crop&w=900&q=80" alt="Cozy sports store">
+    </div>
+
+    <!-- Products Section -->
+    <div id="products" class="section">
+        <h2>Our Products</h2>
+        <ul class="products">
+            <li>
+                <img src="https://images.unsplash.com/photo-1600185364233-4b1cf848ad13?auto=format&fit=crop&w=400&q=80" alt="Basketball">
+                <p>Basketball - $29.99</p>
+            </li>
+            <li>
+                <img src="https://images.unsplash.com/photo-1526401485004-6d06fbbf0f28?auto=format&fit=crop&w=400&q=80" alt="Soccer Ball">
+                <p>Soccer Ball - $24.99</p>
+            </li>
+            <li>
+                <img src="https://images.unsplash.com/photo-1603354355725-2b5a8ef88d37?auto=format&fit=crop&w=400&q=80" alt="Tennis Racket">
+                <p>Tennis Racket - $89.99</p>
+            </li>
+            <li>
+                <img src="https://images.unsplash.com/photo-1600185364067-31f15081f912?auto=format&fit=crop&w=400&q=80" alt="Running Shoes">
+                <p>Running Shoes - $59.99</p>
+            </li>
+            <li>
+                <img src="https://images.unsplash.com/photo-1591854883940-1ff5d9dcf8f7?auto=format&fit=crop&w=400&q=80" alt="Baseball Glove">
+                <p>Baseball Glove - $49.99</p>
+            </li>
+        </ul>
+    </div>
+
+    <!-- About Section -->
+    <div id="about" class="section">
+        <h2>About Us</h2>
+        <p>Mr. Anderson's Store has been serving our community for over 20 years. We love connecting people to the sports they enjoy and creating a cozy, welcoming environment for everyone.</p>
+        <img src="https://images.unsplash.com/photo-1599058917210-6b3e00ff74b8?auto=format&fit=crop&w=900&q=80" alt="Friendly store team">
+    </div>
+
+    <!-- Contact Section -->
+    <div id="contact" class="section">
+        <h2>Contact Us</h2>
+        <form>
+            <input type="text" id="name" placeholder="Name" required>
+            <input type="email" id="email" placeholder="Email" required>
+            <textarea id="message" placeholder="Message" rows="5" required></textarea>
+            <button type="submit">Send</button>
+        </form>
+    </div>
+
+    <!-- Cart Section -->
+    <div id="cart" class="section">
+        <h2>Your Cart</h2>
+        <p>Your cart is currently empty. Start adding some cozy sports gear!</p>
+        <img src="https://images.unsplash.com/photo-1584621936157-4f0f6e6d4b36?auto=format&fit=crop&w=900&q=80" alt="Empty shopping cart">
+    </div>
+</main>
+
+<footer>
+    <p>&copy; 2025 Mr. Anderson's Store</p>
+</footer>
+
+<script>
+    function showSection(sectionId) {
+        const sections = document.querySelectorAll('.section');
+        sections.forEach(sec => sec.classList.remove('active'));
+        document.getElementById(sectionId).classList.add('active');
+    }
+</script>
+</body>
+</html>
